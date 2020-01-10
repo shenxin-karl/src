@@ -38,7 +38,7 @@ typedef struct threadpool_t {
     pthread_mutex_t  tp_pool_mutex;         /* 线程池互斥量 */
     pthread_mutex_t  tp_task_mutex;         /* 任务链表互斥量 */
     pthread_cond_t   tp_task_not_empty;     /* 任务链表非空条件变量 */
-    pthread_cond_t   tp_task_change;        /* 任务链表发送变化条件变量 */
+    pthread_cond_t   tp_task_change;        /* 任务链表发生变化条件变量 */
 } threadpool_t;
 
 
