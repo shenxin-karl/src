@@ -34,7 +34,7 @@ typedef struct myevent_t {
 /* 哈希表 */
 typedef struct hashtable_t {
     myevent_t    *h_buf[HASH_MAX];                  /* 哈希数组 */
-    myevent_t    *h_listen;                         /* 监听数组 */
+    myevent_t    *h_listen;                         /* 监听描述符 事件Node */
     size_t        h_size;                           /* 哈希表中的对象数量 */
 } hashtable_t;
 
