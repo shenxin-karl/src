@@ -7,7 +7,7 @@
           template<typename Functor, typename... Args>
           struct IsCallBackT; 元函数进行检查
           
-  2. 没有就对 MyBind 类的 operator()(Args&&... args) 参数进行是否复合函数参数
+  2. 没有就对 MyBind 类的 operator()(Args&&... args) 参数进行是否符合函数参数
     解决方案: 待补充....
     
     
