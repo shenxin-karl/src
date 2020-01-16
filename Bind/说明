@@ -1,1 +1,15 @@
-模仿 std::bind 的, 仿照 std::bind 的绑定机制, 使用 占位符
+模仿 std::bind 的, 仿照 std::bind 的绑定机制, 使用 占位符, 进行函数绑定
+
+
+缺陷:
+  1. 在调用 Bind 没有进行 函数是否可调用测试
+     解决方案:  编写 
+          template<typename Functor, typename... Args>
+          struct IsCallBackT; 元函数进行检查
+          
+  2. 没有就对 MyBind 类的 operator()(Args&&... args) 参数进行是否复合函数参数
+    解决方案: 待补充....
+    
+    
+  3. MyBind::operator()() 不是 const this 类型函数
+    解决方法: operator()() 和 invoke() 声明为 const 类型,  FunctorT 和 SaveArgsT 声明为 mutable 类型
