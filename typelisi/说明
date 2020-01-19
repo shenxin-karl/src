@@ -10,4 +10,6 @@
     9. PopBack      删除容器末尾元素
     10.IndexOf      获取特定位置的元素
     11.LargestType  获取容器中的最大元素
-    12.InsertSort   第容器进行插入排序
+    12.TransForm    TransForm 算法
+    13.Accmulate    Accmulate 算法
+    13.InsertSort   容器进行插入排序
