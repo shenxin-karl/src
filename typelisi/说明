@@ -12,4 +12,5 @@
     11.LargestType  获取容器中的最大元素
     12.TransForm    TransForm 算法
     13.Accmulate    Accmulate 算法
-    13.InsertSort   容器进行插入排序
+    14.Reserver     反转容器
+    15.InsertSort   容器进行插入排序
