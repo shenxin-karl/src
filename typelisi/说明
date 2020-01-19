@@ -1,0 +1,13 @@
+类型容器：
+  支持方法：
+    1. IsEmpty      判断容器是否为空
+    2. Size         获取容器内的元素数量
+    3. Front        获取容器的首元素
+    5. Back         获取容器的末尾元素   
+    6. PushFront    插入新元素到容器中
+    7. PushBack     插入新元素到容器中
+    8. PopFront     删除容器头部元素
+    9. PopBack      删除容器末尾元素
+    10.IndexOf      获取特定位置的元素
+    11.LargestType  获取容器中的最大元素
+    12.InsertSort   第容器进行插入排序
