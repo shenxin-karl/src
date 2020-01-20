@@ -1,0 +1,82 @@
+UDP 协议函数
+
+#include <sys/types.h>
+#include <sys/socket.h>
+int recvfrom(int sockfd, void *buf, size_t len, int flags, 
+	     	 struct sockaddr *addr, socklen_t *addrlen);
+函数说名：
+	接受来自 udp 端的数据
+	
+sockfd:		套接字文件描述符
+buf:		缓冲区
+flags:		标志位（一般设置 0 ）
+len:		缓冲区大小
+addr:		接受数据的对端地址（可选）
+addrlen:	接受数据的对端地址长度（可选）
+
+
+#include <sys/types.h>
+#include <sys/socket.h>
+int sendto(int sockfd, void *buf， size_t len, 
+		   struct sockaddr *addr, socklen_t *addrlen);
+函数说明：
+	给 addr 发送 upd 数据。
+
+sockfd:		套接字文件描述符
+buf:		缓冲区
+len:		发送数据长度
+addr:		发送地址
+addrlen:	发送地址长度
+
+
+#include <sys/time.h>
+#include <sys/types.h>
+#include <unistd.h>
+int select(int nfds, fd_set *readfds, fd_set *writefds, 
+	   	     fd_set *exceptfds, struct timeval *timeout)
+函数说明：
+	监听 IO 事件，传入监听的集合 fd_set, 函数返回满足事件的个数
+
+nfds:		监听的最大的文件描述符 + 1
+readfds:	传入需要监听的 读事件的文件描述符集合， 函数返回时， 留下可读的文件描述符
+writefds:	传入需要监听的 写事件 的文件描述符集合， 函数返回时， 留下可写的文件描述符
+exceptfds:	传入需要监听的 异常事件 的文件描述符集合， 函数返回时， 留下需要处理异常的文件描述符
+timeout:	select 函数监听的时间（绝对时间）
+
+
+void FDZERO(fd_set *set);			/* 清空集合 */
+void FDSET(fd, fd_set *set);			/* 往集合添加文件描述符 fd */
+void FDCLR(fd, fd_set *set);			/* 删除集合中的文件描述符 fd */
+int  FDISSET(fd, fd_set *set);			/* 判断集合中是否拥有文件描述符 fd */
+
+
+
+#include <poll.h>
+int poll(struct pollfd *fds, int nfds, int timeout);
+
+函数说明：
+	监听 IO 事件，传入监听数组， 函数返回满足事件的个数
+	
+fds:		监听数组首地址
+nfds:		监听数组的文件描述符个数
+timeout:	-1 永久等待， > 0 等待的毫秒
+
+struct pollfd {
+	int 	fd;		/* 文件描述符 */
+	short 	events;		/* 监听的事件 */
+	short 	revents;	/* 满足的事件 */
+}
+
+读事件：	POLLIN
+写事件：	POLLOUT
+异常事件：	POLLERR
+
+通过 revents 与各种事件进行 & 判断
+
+
+
+#include <sys/epoll.h>
+int epoll_create(int size);
+int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);
+int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout);
+

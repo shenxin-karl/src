@@ -1,0 +1,21 @@
+实现序列容器
+
+定义
+  template<typename T, T... Values>
+  struct ValueList {
+  };
+  
+实现功能:
+  1. IsEmpty        判断序列是否为空
+  2. Size           获取容器元素数量
+  3. Front          获取第一个元素
+  4. Back           获取最后一个元素
+  5. PushFront      添加一个新元素到容器中
+  6. PopFront       删除容器第一个元素
+  7. PushBack       添加一个元素到容器末尾
+  8. PopBack        删除容器末尾元素
+  9. TransForm      对容器元素调用 元函数 
+  10.Accmulate      Accmulate 算法
+  11.IndexSequence  生成序列
+  12.Reverse        翻转容器
+  13.InsertSort     容器插入排序
