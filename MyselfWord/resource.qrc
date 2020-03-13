@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Image/create_new_file.png</file>
+        <file>Image/open_file.png</file>
+        <file>Image/printer.png</file>
+        <file>Image/save.png</file>
+        <file>Image/redo.png</file>
+        <file>Image/cut.png</file>
+        <file>Image/copy.png</file>
+        <file>Image/paste.png</file>
+        <file>Image/undo.png</file>
+        <file>Image/Word.png</file>
+        <file>Image/bold.png</file>
+        <file>Image/centerAlign.png</file>
+        <file>Image/italic.png</file>
+        <file>Image/leftAlign.png</file>
+        <file>Image/rightAlign.png</file>
+        <file>Image/underline.png</file>
+        <file>Image/colorFont.png</file>
+        <file>Image/justifyAlign.png</file>
+        <file>Image/font.png</file>
+        <file>Image/align.png</file>
+        <file>Image/about.png</file>
+        <file>Image/qt.png</file>
+        <file>Image/insertImage.png</file>
+        <file>Image/insertList.png</file>
+        <file>Image/insertTable.png</file>
+    </qresource>
+</RCC>
